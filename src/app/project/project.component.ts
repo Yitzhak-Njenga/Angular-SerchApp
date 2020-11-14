@@ -8,10 +8,14 @@ import { from } from 'rxjs';
   styleUrls: ['./project.component.css']
 })
 export class ProjectComponent implements OnInit {
+  
+  profile:any[];
 
   constructor( private ProfileService:ProfileService) {
     this.ProfileService.getPfofileInfo().subscribe(profile => {
       console.log(profile);
+      this.profile=profile;
+      
     });
    }
 
