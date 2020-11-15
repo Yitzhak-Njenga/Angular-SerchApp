@@ -7,12 +7,14 @@ import { ProjectComponent } from './project/project.component';
 import { ProfileService } from './profile.service';
 import { from } from 'rxjs';
 import { FormsModule} from '@angular/forms';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProjectComponent
+    ProjectComponent,
+    NavbarComponent
 
 
   ],
