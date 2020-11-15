@@ -15,7 +15,7 @@ export class ProfileService {
     console.log("service is now ready");
     this.username ="Yitzhak-Njenga";
    }
-   getPfofileInfo(){
+   getProfileInfo(){
     return this.http.get('https://api.github.com/users/' + this.username + "?this.client_id=" + this.clientid + "&client_secret=" + this.clientsecret );
    }
 }

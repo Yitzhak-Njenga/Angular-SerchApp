@@ -7,15 +7,17 @@ import { from } from 'rxjs';
   templateUrl: './project.component.html',
   styleUrls: ['./project.component.css']
 })
+
+
 export class ProjectComponent implements OnInit {
-  
-  profile:any[];
+  profile:object;
+  repos: any[];
+  username:string;
 
   constructor( private ProfileService:ProfileService) {
-    this.ProfileService.getPfofileInfo().subscribe(profile => {
+    this.ProfileService.getProfileInfo().subscribe(profile => {
       console.log(profile);
-      this.profile=profile;
-      
+      this.profile = profile
     });
    }
 

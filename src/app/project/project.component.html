@@ -1,20 +1,13 @@
-
-    <div class=" panel panel-default" >
-    <div class="panel-heading">
-        {{profile.login}} 
-    </div>
-
-    <div class="panel-body">
-        <div class="row">
-            <div class="cols-sm-3"></div>
-            <img src="{{profile.avatar_url}}" alt="" class="img-thumbnail img-responsive">
-        
-        <div class="col-sm-5">
-          <ul class="ul.list-group">
-              <li class="list-group-item" >{{profile.bio}}</li>
-          </ul>
-        </div>
-    </div>
-    </div>
-
-
+<h1>GitHub  Search-App</h1>
+<div *ngIf="profile">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			{{profile.name}} {{profile.login}}
+			<span *ngIf="profile.company">, Works at {{profile.company}}</span>
+			,From&nbsp;{{profile.location}}
+		</div>
+		<div class="panel-body">
+			<div class="row">
+				<div class="col-sm-3">
+                    <img src="{{profile.avatar_url}}" class="img-circle img-responsive" alt="Profile Image">
+</div>
