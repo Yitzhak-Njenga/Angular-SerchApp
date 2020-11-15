@@ -8,19 +8,26 @@ import { from } from 'rxjs';
   styleUrls: ['./project.component.css']
 })
 
-
 export class ProjectComponent implements OnInit {
+
   profile:object;
-  repos: any[];
+  repos: object;
   username:string;
 
-  constructor( private ProfileService:ProfileService) {
-    this.ProfileService.getProfileInfo().subscribe(profile => {
-      console.log(profile);
-      this.profile = profile
-    });
-   }
+constructor(private ProfilService: ProfileService){
+}
+  findProfile(){
+  	this.ProfilService.updateProfile(this.username);
+  	this.ProfilService.getProfileInfo().subscribe(profile => {
+  		console.log(profile);
+  		this.profile = profile;
+  	});
 
+  	this.ProfilService.getProfileRepos().subscribe(repos => {
+  		console.log(repos);
+  		this.repos = repos;
+  	})  	
+  }
   ngOnInit(): void {
   }
 

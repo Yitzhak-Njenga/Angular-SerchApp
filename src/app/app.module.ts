@@ -6,16 +6,21 @@ import { AppComponent } from './app.component';
 import { ProjectComponent } from './project/project.component';
 import { ProfileService } from './profile.service';
 import { from } from 'rxjs';
+import { FormsModule} from '@angular/forms';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ProjectComponent
+
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule
   ],
   providers: [ProfileService ],
   bootstrap: [AppComponent]

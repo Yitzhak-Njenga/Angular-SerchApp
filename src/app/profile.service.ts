@@ -6,6 +6,8 @@ import { HttpClient} from '@angular/common/http'
   providedIn: 'root'
 })
 export class ProfileService {
+ 
+  
 
   private username:string;
   private clientid = "285a80f139d337e0ba05";
@@ -18,4 +20,12 @@ export class ProfileService {
    getProfileInfo(){
     return this.http.get('https://api.github.com/users/' + this.username + "?this.client_id=" + this.clientid + "&client_secret=" + this.clientsecret );
    }
+
+   getProfileRepos(){
+    return this.http.get("https://api.github.com/users/" + this.username + "/repos?client_id=" + this.clientid + "&client_secret=" + this.clientsecret)
+   }
+
+   updateProfile(username:string){
+  	this.username = username;
+  }
 }

@@ -1,4 +1,11 @@
 <h1>GitHub  Search-App</h1>
+
+<form action="" class="search-form">
+	<div class="form-group">
+		<input type="text" class="form-control" placeholder="Search git users with username" [(ngModel)]="username" name="username" (keyup)="findProfile()">
+	</div>
+</form>
+
 <div *ngIf="profile">
 	<div class="panel panel-default">
 		<div class="panel-heading">
@@ -26,7 +33,7 @@
 
     
         <div class="col-sm-4">
-            <div>
+            
                 
                     <p></p><span class="label label-default">{{profile.followers}} Followers</span>
                     <p></p><span class="label label-primary">{{profile.following}} Following</span>
@@ -34,3 +41,19 @@
                     <p></p><span class="label label-info">{{profile.public_repos}} Public Repos</span>
                 
                 <p><a href="{{profile.html_url}}" target="_blank" class="btn btn-success btn-sm">View profile on github</a></p>
+            </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Repos</h3>
+                    </div>
+                    <div class="panel-body" *ngFor="let repo of repos">
+                        <p class="clearfix">
+                            <a href="{{repo.html_url}}" target="_blank" class="btn btn-sm btn-warning pull-right">View this project on github</a>   
+                            <p>{{repo.name}} </p>
+                        <p>{{repo.description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
+</div>
