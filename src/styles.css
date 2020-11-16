@@ -10,3 +10,6 @@ h1{
 body{
     background-image: url('../Angular-SerchApp/src/assets/vadim-sadovski-aJ8IrfRxqbg-unsplash.jpg');
 }
+.form-control{
+    background-color: #1719194f
+}

@@ -8,6 +8,7 @@ import { from } from 'rxjs';
   styleUrls: ['./project.component.css']
 })
 
+
 export class ProjectComponent implements OnInit {
 
   profile:object;
@@ -30,5 +31,4 @@ constructor(private ProfilService: ProfileService){
   }
   ngOnInit(): void {
   }
-
 }
